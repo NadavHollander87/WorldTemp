@@ -37,14 +37,16 @@ public class WorldTemp {
         return topCitiesByAggValues.subList(0, Math.min(resultSize, topCitiesByAggValues.size()));
     }
 
-    private List<CityWithAgg> sortCities(Set<City> cities, Aggregator agg) {
-        List<CityWithAgg> topCitiesByAggValues = new ArrayList<>();
+    private List<CityWithAgg> sortCities(Set<City> cities, Aggregator aggtor) {
+        ConcurrentAggregator concurAggtor = new ConcurrentAggregator();
         for (City city : cities) {
             if (city.getPopulation() > POPULATION_THRESHOLD) {
-                double cityVal = aggregateCityTemps(city, agg);
-                topCitiesByAggValues.add(new CityWithAgg(city, cityVal));
+                concurAggtor.addCityAggregation(() -> {
+                            return new CityWithAgg(city, aggregateCityTemps(city, aggtor));
+                });
             }
         }
+        List<CityWithAgg> topCitiesByAggValues = concurAggtor.getCityWithAggList();
         Collections.sort(topCitiesByAggValues);
         Collections.reverse(topCitiesByAggValues);
         return topCitiesByAggValues;
