@@ -1,7 +1,7 @@
 package weatherapi;
 
-import worldtemp.City;
-import worldtemp.DailyMeasurement;
+import model.City;
+import model.DailyMeasurement;
 import worldtemp.generator.CityGenerator;
 import worldtemp.generator.DailyMeasurementGenerator;
 

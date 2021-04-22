@@ -1,6 +1,6 @@
 package worldtemp.generator;
 
-import worldtemp.City;
+import model.City;
 
 import java.util.HashSet;
 import java.util.Random;

@@ -1,5 +1,7 @@
 package worldtemp;
 
+import model.City;
+
 public class CityWithAgg implements Comparable<CityWithAgg>{
 
     private final City city;

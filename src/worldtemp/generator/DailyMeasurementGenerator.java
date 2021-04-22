@@ -1,6 +1,6 @@
 package worldtemp.generator;
 
-import worldtemp.DailyMeasurement;
+import model.DailyMeasurement;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

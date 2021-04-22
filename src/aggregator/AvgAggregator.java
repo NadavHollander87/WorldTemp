@@ -1,6 +1,6 @@
 package aggregator;
 
-import worldtemp.DailyMeasurement;
+import model.DailyMeasurement;
 
 import java.util.List;
 

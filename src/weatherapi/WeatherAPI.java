@@ -1,7 +1,7 @@
 package weatherapi;
 
-import worldtemp.City;
-import worldtemp.DailyMeasurement;
+import model.City;
+import model.DailyMeasurement;
 
 import java.util.List;
 import java.util.Set;

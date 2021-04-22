@@ -1,4 +1,4 @@
-package worldtemp;
+package model;
 
 public class City {
     private final String id;
